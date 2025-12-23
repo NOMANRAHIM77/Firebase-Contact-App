@@ -1,30 +1,48 @@
-import React from 'react'
-
+// Import user icon
 import { IoPerson } from "react-icons/io5";
-import { FaRegTrashAlt } from "react-icons/fa";
-import { FaRegEdit } from "react-icons/fa";
 
-const ContactBar = ({value}) => {
-    console.log(value)
+// Import edit and delete icons
+import { FaRegTrashAlt, FaRegEdit } from "react-icons/fa";
+
+// ContactBar component displays a single contact
+// contact  → contact data (name, email, id)
+// onEdit   → function to edit the contact
+// onDelete → function to delete the contact
+const ContactBar = ({ contact, onEdit, onDelete }) => {
   return (
-    <>
-         <div id={value.id} className='w-auto h-7 bg-black flex gap-8 justify-between items-center p-5'  >
+    // Main container for contact card
+    <div className="bg-black text-white p-4 flex justify-between w-96 rounded">
+      
+      {/* Left section: user icon and contact details */}
+      <div className="flex gap-3 items-center">
+        
+        {/* User icon */}
+        <IoPerson />
 
-            <IoPerson className='text-white text-2xl cursor-pointer' />
+        {/* Contact name and email */}
+        <div>
+          <p>{contact.name}</p>
+          <p>{contact.email}</p>
+        </div>
+      </div>
 
-               <div className='flex-col justify-between text-white text-1xl gap-4 '>
-                <h2  >{value.name}</h2>
-               <h2  >{value.email}</h2>
-               </div>
+      {/* Right section: edit and delete actions */}
+      <div className="flex gap-3">
+        
+        {/* Edit icon triggers edit functionality */}
+        <FaRegEdit
+          className="cursor-pointer"
+          onClick={onEdit}
+        />
 
-              <div className='flex justify-between gap-3 ' >
-                 <FaRegEdit className='text-white text-2xl cursor-pointer' />
-                 <FaRegTrashAlt className='text-white text-2xl cursor-pointer' />
-              </div>
+        {/* Delete icon removes the contact */}
+        <FaRegTrashAlt
+          className="cursor-pointer"
+          onClick={onDelete}
+        />
+      </div>
+    </div>
+  );
+};
 
-          </div>
-    </>
-  )
-}
-
-export default ContactBar
+export default ContactBar;
