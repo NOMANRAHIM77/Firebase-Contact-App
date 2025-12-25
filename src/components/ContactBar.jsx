@@ -11,13 +11,13 @@ import { FaRegTrashAlt, FaRegEdit } from "react-icons/fa";
 const ContactBar = ({ contact, onEdit, onDelete }) => {
   return (
     // Main container for contact card
-    <div className="bg-black text-white p-4 flex justify-between w-96 rounded">
+    <div className="bg-black text-white p-4 flex justify-between w-96 rounded items-center ">
       
       {/* Left section: user icon and contact details */}
       <div className="flex gap-3 items-center">
         
         {/* User icon */}
-        <IoPerson />
+        <IoPerson  className="text-3xl" />
 
         {/* Contact name and email */}
         <div>
@@ -27,17 +27,17 @@ const ContactBar = ({ contact, onEdit, onDelete }) => {
       </div>
 
       {/* Right section: edit and delete actions */}
-      <div className="flex gap-3">
+      <div className="flex gap-6">
         
         {/* Edit icon triggers edit functionality */}
         <FaRegEdit
-          className="cursor-pointer"
+          className="cursor-pointer  text-2xl"
           onClick={onEdit}
         />
 
         {/* Delete icon removes the contact */}
         <FaRegTrashAlt
-          className="cursor-pointer"
+          className="cursor-pointer text-2xl"
           onClick={onDelete}
         />
       </div>
