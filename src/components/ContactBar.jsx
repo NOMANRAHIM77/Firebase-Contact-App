@@ -11,7 +11,7 @@ import { FaRegTrashAlt, FaRegEdit } from "react-icons/fa";
 const ContactBar = ({ contact, onEdit, onDelete }) => {
   return (
     // Main container for contact card
-    <div className="bg-black text-white p-4 flex justify-between w-96 rounded items-center ">
+    <div className="bg-yellow-400 text-black p-4 flex justify-between w-96 rounded items-center ">
       
       {/* Left section: user icon and contact details */}
       <div className="flex gap-3 items-center">

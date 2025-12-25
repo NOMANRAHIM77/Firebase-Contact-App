@@ -112,9 +112,10 @@ function App() {
         <input
           type="text"
           placeholder="Search by name or email"
-          className="bg-transparent border-white rounded-md h-7 w-75 px-11"
+          className="bg-yellow-300 text-black border-white rounded-md h-7 w-75 px-11"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
+          
         />
 
         {/* Add contact button */}
